@@ -41,7 +41,6 @@
 		3732ECD427B47637004B790C /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3732ECD227B47637004B790C /* BaseCollectionViewCell.swift */; };
 		3732ECD527B47637004B790C /* BaseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3732ECD327B47637004B790C /* BaseCollectionViewCell.xib */; };
 		3732ECD727B476E0004B790C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3732ECD627B476E0004B790C /* BaseViewController.swift */; };
-		3732ECDB27B479B9004B790C /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3732ECDA27B479B9004B790C /* AppUtils.swift */; };
 		3732ECDE27B47CEE004B790C /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3732ECDD27B47CEE004B790C /* Reusable.swift */; };
 		3732ECE227B47E3C004B790C /* StoryBoardInstantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3732ECE127B47E3C004B790C /* StoryBoardInstantiate.swift */; };
 		3732ECE427B47F61004B790C /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3732ECE327B47F61004B790C /* UICollectionViewExtension.swift */; };
@@ -109,7 +108,6 @@
 		3732ECD227B47637004B790C /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		3732ECD327B47637004B790C /* BaseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCollectionViewCell.xib; sourceTree = "<group>"; };
 		3732ECD627B476E0004B790C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		3732ECDA27B479B9004B790C /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
 		3732ECDD27B47CEE004B790C /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		3732ECE127B47E3C004B790C /* StoryBoardInstantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardInstantiate.swift; sourceTree = "<group>"; };
 		3732ECE327B47F61004B790C /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
@@ -338,14 +336,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		3732ECCB27B44FB5004B790C /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				3732ECDA27B479B9004B790C /* AppUtils.swift */,
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
 		3732ECDC27B47CE2004B790C /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,7 +352,6 @@
 				3732ECD627B476E0004B790C /* BaseViewController.swift */,
 				3732ECE727B48E51004B790C /* RatingView.swift */,
 				3732ECE027B47D47004B790C /* Extension */,
-				3732ECCB27B44FB5004B790C /* Util */,
 				3732ECDC27B47CE2004B790C /* Protocol */,
 				3732ECBB27B4370A004B790C /* BaseCollectionView */,
 			);
@@ -692,7 +681,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3732ECDB27B479B9004B790C /* AppUtils.swift in Sources */,
 				3732ECCF27B450A8004B790C /* GameDetailsViewModel.swift in Sources */,
 				3732ECCA27B449F1004B790C /* ResponseEmpty.swift in Sources */,
 				3732EC9C27B4189A004B790C /* TabBarController.swift in Sources */,

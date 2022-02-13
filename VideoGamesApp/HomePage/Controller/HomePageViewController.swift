@@ -100,10 +100,11 @@ extension HomePageViewController: UISearchBarDelegate, UISearchResultsUpdating {
     }
     
     private func viewTransition(item: UIView, constant: CGFloat) {
-        UIView.transition(with: item, duration: 0.7, options: .transitionCrossDissolve, animations: {
             self.containerViewHeightConstant.constant = constant
-        }, completion: nil)
-    }
+            UIView.transition(with: item, duration: 0.7, options: .curveEaseInOut, animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        }
 }
 
 //MARK: - UICollectionViewDelegate,UICollectionViewDataSource
