@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SQ4-xh-3ET">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VLz-Mm-fBi">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -10,7 +12,9 @@
         <scene sceneID="zFM-dt-1ea">
             <objects>
                 <navigationController id="prn-Ae-LeS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="pen-LN-GRW"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="HomeActive" id="pen-LN-GRW">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BSg-Mn-XW1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -36,7 +40,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="j0W-EQ-XcD">
             <objects>
-                <tabBarController id="SQ4-xh-3ET" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SQ4-xh-3ET" customClass="TabBarController" customModule="VideoGamesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G6z-oS-Kra">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -51,11 +55,13 @@
             </objects>
             <point key="canvasLocation" x="-1801" y="487"/>
         </scene>
-        <!--Favorites-->
+        <!--Navigation Controller-->
         <scene sceneID="nAt-xv-zMM">
             <objects>
                 <navigationController id="NAO-wv-aCi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" id="pav-nK-hvO"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="pav-nK-hvO">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2m8-Ro-VdY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -78,5 +84,65 @@
             </objects>
             <point key="canvasLocation" x="-1041" y="1688"/>
         </scene>
+        <!--SplashVC-->
+        <scene sceneID="ENU-nG-MgT">
+            <objects>
+                <viewController id="xcD-Ui-B23" customClass="SplashVC" customModule="Havucum" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HhI-PX-Loj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Th1-GK-hNb" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="44.666666666666657" y="250" width="325" height="236"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="325" id="Vfy-Tf-uKz"/>
+                                    <constraint firstAttribute="height" constant="236" id="YoQ-tR-1H5"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="video-game-console"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Izd-nH-wE8"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Th1-GK-hNb" firstAttribute="centerX" secondItem="HhI-PX-Loj" secondAttribute="centerX" id="F2c-J7-QSc"/>
+                            <constraint firstItem="Th1-GK-hNb" firstAttribute="centerY" secondItem="HhI-PX-Loj" secondAttribute="centerY" id="haS-6Q-40Z"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SyX-jy-D6I"/>
+                    <connections>
+                        <outlet property="animationView" destination="Th1-GK-hNb" id="OzJ-CZ-1S8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eK1-KJ-FxJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1217.3913043478262" y="-314.67391304347831"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iDp-sW-A2g">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="VLz-Mm-fBi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m2U-7p-lwY">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xcD-Ui-B23" kind="relationship" relationship="rootViewController" id="daE-Ya-fS4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q9V-Pn-hLi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2128" y="-314"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="HomeActive" width="28" height="28"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

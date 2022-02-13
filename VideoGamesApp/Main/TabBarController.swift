@@ -14,4 +14,15 @@ class TabBarController: UITabBarController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return  .lightContent
+    }
+}
+
+// MARK : - StoryboardInstantiable
+extension TabBarController: StoryboardInstantiable {
+    
+    static var storyboardName: String { return "Main" }
+    static var storyboardIdentifier: String? { return "TabBarController" }
 }

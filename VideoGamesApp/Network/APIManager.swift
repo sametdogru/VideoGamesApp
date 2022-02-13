@@ -11,16 +11,16 @@ class APIManager: NSObject {
     
     static let shared = APIManager()
     
-    func requestGameList(sender: AnyObject?, key: String, pageNo: String, selector: Selector?) {
+    func requestGameList(sender: AnyObject?, key: String, page: Bool, selector: Selector?) {
 
         let req = HomePageRequestModel()
         if !key.isEmpty {
-            req.endpoint = req.endpoint + key + "&\(pageNo)"
+            req.endpoint = req.endpoint + key
         }
         
         print("path : \(req.endpoint)")
         
-        req.send(httpMethod: Constants().HttpMethod_GET) { (model, errorTuple, empty) in
+        req.send(httpMethod: Constants().HttpMethod_GET, page: page) { (model, errorTuple, empty) in
 
             do {
                 if let response = model {
@@ -66,7 +66,7 @@ class APIManager: NSObject {
                     guard error == nil else {
                         let errResponse = errorTuple?.1
                         if let data = errResponse?.data(using: String.Encoding.utf8) {
-                            let errorResult = try JSONDecoder().decode(GameDetailsResponse.self, from: data)
+                            let errorResult = try JSONDecoder().decode(Results.self, from: data)
                                 print(errorResult)
                         }
                         return

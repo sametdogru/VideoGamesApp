@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class GameDetailsRequestModel: NetworkRequest<GameDetailsResponse> {
+class GameDetailsRequestModel: NetworkRequest<Results> {
     override init() {
         super.init()
         endpoint = "/games/"

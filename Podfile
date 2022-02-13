@@ -8,6 +8,7 @@ target 'VideoGamesApp' do
   # Pods for VideoGamesApp
     pod 'Alamofire', '4.9.1'
     pod 'Kingfisher', '~> 7.0'
+    pod 'lottie-ios'
 
   target 'VideoGamesAppTests' do
     inherit! :search_paths

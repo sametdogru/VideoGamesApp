@@ -15,7 +15,7 @@ class NetworkRequest<RM: Codable>: Request {
     var path: String = ""
     var checkInternet = false
     
-    func send(httpMethod: String, completion: @escaping (RM?, (Error?, String?)?, ResponseEmpty?) -> Void) {
+    func send(httpMethod: String, page: Bool? = nil, completion: @escaping (RM?, (Error?, String?)?, ResponseEmpty?) -> Void) {
         
         if checkInternet {
             guard hasInternet() else {
@@ -23,9 +23,14 @@ class NetworkRequest<RM: Codable>: Request {
                 return
             }
         }
-                
-        createURLString()
 
+        switch page {
+        case true:
+            createLazyLoadingURLString()
+        default:
+            createURLString()
+        }
+                
         let safeURL = path.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))
         var urlRequest = URLRequest(url: URL(string: safeURL!)!)
         urlRequest.httpMethod = httpMethod
@@ -75,6 +80,10 @@ class NetworkRequest<RM: Codable>: Request {
 
     func createURLString() {
         path = ProdEnv.shared.baseUrl + endpoint
+    }
+    
+    func createLazyLoadingURLString() {
+        path = UserDefaults.standard.object(forKey: "LZY") as! String
     }
 }
 

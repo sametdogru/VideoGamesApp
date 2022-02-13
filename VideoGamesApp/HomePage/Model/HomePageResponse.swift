@@ -26,6 +26,7 @@ struct Results: Codable {
     var rating: Double?
     var metacritic: Double?
     var released: String?
+    var description: String?
     var ratings: [Ratings]?
 }
 
