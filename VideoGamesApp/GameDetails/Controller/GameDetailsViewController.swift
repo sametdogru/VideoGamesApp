@@ -16,6 +16,7 @@ class GameDetailsViewController: BaseViewController {
     @IBOutlet weak var lblMetaCriticRate: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
     @IBOutlet weak var btnLike: UIButton!
+    @IBOutlet weak var closeBtn: UIButton!
     
     let viewModel = GameDetailsViewModel()
     var favoritedGames = [Results]()
@@ -39,6 +40,8 @@ class GameDetailsViewController: BaseViewController {
             self.lblMetaCriticRate.text = String(describing: model?.metacritic ?? 0)
             self.lblDescription.text = model?.description?.html2String
             self.btnLike.setImage(UIImage(named: "favorite"), for: .normal)
+            self.btnLike.isHidden = false
+            self.closeBtn.isHidden = false
             self.checkButton()
 
             if let url = URL(string: model?.background_image ?? ""){

@@ -18,6 +18,7 @@ class HomePageViewController: BaseViewController {
     
     var searchText = String()
     let viewModel = HomePageViewModel()
+    private var lastContentOffset: CGFloat = 0.0
     
     lazy var PageViewController: UIHomePageViewController = {
         var viewController = UIHomePageViewController.instantiate()
@@ -100,11 +101,11 @@ extension HomePageViewController: UISearchBarDelegate, UISearchResultsUpdating {
     }
     
     private func viewTransition(item: UIView, constant: CGFloat) {
-            self.containerViewHeightConstant.constant = constant
-            UIView.transition(with: item, duration: 0.7, options: .curveEaseInOut, animations: {
-                self.view.layoutIfNeeded()
-            }, completion: nil)
-        }
+        self.containerViewHeightConstant.constant = constant
+        UIView.transition(with: item, duration: 0.5, options: .curveEaseInOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
 }
 
 //MARK: - UICollectionViewDelegate,UICollectionViewDataSource
@@ -135,15 +136,15 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
             self.viewModel.requestForGameList(page: true)
         }
     }
-    
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        self.viewTransition(item: self.containerView, constant: 0)
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y == 0 {
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (scrollView.contentOffset.y < self.lastContentOffset) {
             self.viewTransition(item: self.containerView, constant: 271)
         }
+        else if (scrollView.contentOffset.y > self.lastContentOffset) {
+            self.viewTransition(item: self.containerView, constant: 0)
+        }
+        self.lastContentOffset = scrollView.contentOffset.y
     }
 }
 

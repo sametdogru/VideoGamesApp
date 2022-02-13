@@ -32,14 +32,14 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="275"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </imageView>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxQ-4f-1sx">
+                                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxQ-4f-1sx">
                                                                 <rect key="frame" x="15" y="15" width="50" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="50" id="TJC-Ms-Y41"/>
                                                                     <constraint firstAttribute="height" constant="50" id="TjC-R2-0tD"/>
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="icons8-macos-close-48"/>
+                                                                <buttonConfiguration key="configuration" style="plain" image="icons8-close-30"/>
                                                                 <connections>
                                                                     <action selector="btnClose:" destination="fbg-Pd-xw0" eventType="touchUpInside" id="Uev-PC-0rF"/>
                                                                 </connections>
@@ -60,13 +60,13 @@
                                                         <rect key="frame" x="15" y="288" width="384" height="46"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="  " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ql-Lq-4U5">
-                                                                <rect key="frame" x="0.0" y="0.0" width="317" height="46"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="384" height="46"/>
                                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="20"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAd-XO-3E5">
-                                                                <rect key="frame" x="317" y="0.0" width="67" height="46"/>
+                                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAd-XO-3E5">
+                                                                <rect key="frame" x="0.0" y="0.0" width="67" height="46"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="46" id="aj3-eG-2X9"/>
                                                                     <constraint firstAttribute="width" constant="67" id="dKj-fz-z57"/>
@@ -132,6 +132,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="btnLike" destination="OAd-XO-3E5" id="qQY-wR-eAq"/>
+                        <outlet property="closeBtn" destination="PxQ-4f-1sx" id="I1f-Q5-BnL"/>
                         <outlet property="imgGame" destination="Ffw-Yd-sSy" id="A9T-A0-g5w"/>
                         <outlet property="lblDescription" destination="iVe-RW-K9Y" id="FVL-TM-WxL"/>
                         <outlet property="lblMetaCriticRate" destination="DRP-aW-HQT" id="rMg-N5-kBV"/>
@@ -146,7 +147,7 @@
     </scenes>
     <resources>
         <image name="favorite" width="32" height="32"/>
-        <image name="icons8-macos-close-48" width="48" height="48"/>
+        <image name="icons8-close-30" width="30" height="30"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

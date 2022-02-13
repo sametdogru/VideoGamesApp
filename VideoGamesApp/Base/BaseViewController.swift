@@ -35,7 +35,6 @@ class BaseViewController: UIViewController {
         let vc = GameDetailsViewController.instantiate()
         guard let id = id else { return }
         vc.gameId = id
-        vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }
 }
